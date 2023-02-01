@@ -29,11 +29,11 @@ public class Job {
 
     public String toString() {
         String jobString = "\nID: " + id + "\n";
-        jobString += "Name: " + (name.isEmpty() ? "Data not available\n" : name + "\n");
-        jobString += "Employer: " + (employer == null ? "Data not available\n" : employer + "\n");
-        jobString += "Location: " + (location == null ? "Data not available\n" : location + "\n");
-        jobString += "Position Type: " + (positionType == null ? "Data not available\n" : positionType + "\n");
-        jobString += "Core Competency: " + (coreCompetency == null? "Data not available\n" : coreCompetency + "\n");
+        jobString += "Name: " + (name.isEmpty() || name.toString().equals("")? "Data not available\n" : name + "\n");
+        jobString += "Employer: " + (employer == null || employer.toString().equals("")? "Data not available\n" : employer + "\n");
+        jobString += "Location: " + (location == null | location.toString().equals("")? "Data not available\n" : location + "\n");
+        jobString += "Position Type: " + (positionType == null | positionType.toString().equals("") ? "Data not available\n" : positionType + "\n");
+        jobString += "Core Competency: " + (coreCompetency == null || coreCompetency.toString().equals("")? "Data not available\n" : coreCompetency + "\n");
 
         return jobString;
     }
